@@ -13,15 +13,22 @@ code {
 }
 
 
+
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  color: white;
+}
 .nav {
   display: flex;
   flex-direction: row;
-  background-color: blue;
-  color: white;
 }
 .logo {
-  margin-left: 15rem;
+  margin-left: 10rem;
   margin-right: 50rem;
+  width: 100px;
+  height: 100px;
 }
 .links {
   margin: 5px;
