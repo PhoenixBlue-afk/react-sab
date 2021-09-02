@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export const Item = ({pictureUrl,title,description,price,id})=>{
-    return<div className="card col-4">
+export const Item = ({id, pictureUrl,title,description,price})=>{
+    return<div key={id} className="card col-4">
                 <img src={pictureUrl} alt={title} />
                 <h3>{title}</h3>
                 <p>{description}</p>
