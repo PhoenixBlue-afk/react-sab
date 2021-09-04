@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { pedirDatos } from "../../helpers/pedirDatos";
-
 import { ItemDetail } from "./ItemDetail";
 
 export const ItemDetailContainer = () =>{
@@ -10,7 +9,7 @@ const [item, setItem]= useState(null)
 const [loading,setLoading] = useState(false)
 
 const {itemId} = useParams()
-console.log(item);
+
 
     useEffect(()=>{
 

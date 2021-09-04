@@ -1,8 +1,24 @@
 import React from 'react'
+import { Counter } from '../Counter/Counter'
+import { useState } from 'react'
+import { CarritoContext } from '../../context/CarritoContext';
+import  { useContext } from 'react'  
 
 
-export const ItemDetail = ({id,title,category,description,price,pictureUrl})=>{
+export const ItemDetail = ({id,title,category,description,price,pictureUrl,stock})=>{
     
+    const {agregarCarrito} = useContext(CarritoContext)
+
+    const [cantidad,setCantidad]= useState(1)
+
+    const handleApp = () =>{
+        agregarCarrito([
+            id, title,category, description, price, pictureUrl, cantidad
+        ])
+    }
+
+    
+
     return (
         
         <div>
@@ -20,13 +36,8 @@ export const ItemDetail = ({id,title,category,description,price,pictureUrl})=>{
                             {description}<br/>
                             Id: {id}<br/>
                         </p>
-                        <div id="contador">
-                            <button className="btn btn-outline-primary" id="menos">-</button>
-                            <p className="numero">0</p>
-                            <button className="btn btn-outline-primary"id="mas">+</button> 
-                        </div>
-                        
-                        <button className="btn btn-outline-primary" id="botonLargo">Agregar al carrito!!</button>
+                        <Counter max ={stock} cantidad={cantidad} setCantidad={setCantidad}/>
+                        <button className="btn btn-outline-primary" id="botonLargo" onClick={handleApp}>Agregar al carrito!!</button>
                     </div>
                 </div>
                 

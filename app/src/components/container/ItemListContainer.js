@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-
-
 import { pedirDatos } from '../../helpers/pedirDatos';
-
-//import { Item } from './Item';
 import { ItemList } from './ItemList';
 import { Navegacion } from './navegacion';
+
+
+
 export const ItemListContainer =(props)=> {
 
-    
+
     const {catId} =useParams()
     
      
