@@ -5,7 +5,7 @@ export const Item = ({id, pictureUrl,title,description,price})=>{
                 <img src={pictureUrl} alt={title} />
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <p>{price}</p>
+                <p>El precio es de ${price}</p>
                 <Link to={`/detail/${id}`} className="btn btn-outline-primary">Ver mas</Link> 
             </div>
 }

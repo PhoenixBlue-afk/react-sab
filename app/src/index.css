@@ -62,3 +62,64 @@ header {
   background-color: black;
   color: white;
 }
+
+
+
+.detalle-prod{
+  text-align: center;
+  background-color: darkviolet;
+  color: azure;
+}
+.titulo-detalle-prod{
+  text-align: center;
+  
+}
+.foto-detalle-prod{
+  height: 350px;
+  
+}
+
+#formatoImg{
+  width: 350px;
+  margin-left: 5rem;
+}
+
+#seccion-prod{
+  display: flex;
+  flex-direction: row;
+}
+.sub-titulos-prod{
+  margin-left: 15rem;
+  margin-top: 10%;
+}
+
+#contador{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.numero{
+  font-size: 20pt;
+}
+#menos, #mas{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#botonLargo{
+  margin-top: 50px;
+  width: 200px;
+  margin-left: 1.5rem;
+}
+.volver{
+  
+  padding: 3px;
+  font-size: 13pt;
+  background-color: red;
+  color: white;
+  border-radius: 25px;
+}
+.naveg{
+  margin: 15px;
+}
