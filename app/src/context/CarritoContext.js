@@ -4,7 +4,7 @@ import { useState } from "react";
 export const CarritoContext = createContext()
 
 
-export const CarritoProvider = (children)=> {
+export const CarritoProvider = ({children})=> {
     
     const [carrito, setCarrito]= useState([])
 
@@ -18,16 +18,10 @@ export const CarritoProvider = (children)=> {
       prod
     ])
   }
-  function prePaso(acc,prod){
-    acc=0; 
-    acc= acc + prod.cantidad
-    return acc
-  }
+  
 
-  function acumuladorCarrito() {
-      carrito.reduce (prePaso) 
-      return carrito
-     
+  const acumuladorCarrito = ()=> {
+      return carrito.reduce ((acc, prod)=> acc + prod.count, 0) 
   }
   const eliminarCarrito = (id) => {
     setCarrito(carrito.filter(prod => prod.id !== id))
@@ -36,6 +30,9 @@ export const CarritoProvider = (children)=> {
     setCarrito([])
   }
 
+  const isInCart = (id)=>{
+    return carrito.some(el => el.id === id)
+  }
     
     
     
@@ -43,8 +40,8 @@ export const CarritoProvider = (children)=> {
         
 
 
-        <CarritoContext value={{carrito, agregarCarrito, acumuladorCarrito, eliminarCarrito, vaciarCarrito}}>
+        <CarritoContext.Provider value={{carrito, agregarCarrito, acumuladorCarrito, eliminarCarrito, vaciarCarrito, isInCart}}>
             {children}
-        </CarritoContext>
+        </CarritoContext.Provider>
     )
 }

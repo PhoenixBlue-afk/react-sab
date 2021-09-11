@@ -6,13 +6,16 @@ import {ItemListContainer} from './components/container/ItemListContainer.js';
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { CarritoProvider } from './context/CarritoContext';
+import { CartScreen } from './components/CartScreen/CartScreen';
 
 
-//import { Router } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 function App() {
   return (
-    <BrowserRouter>
+    <CarritoProvider>
+      <BrowserRouter>
     <>
         <header>
           <NavBar/>
@@ -42,7 +45,7 @@ function App() {
       </Route>
 
       <Route exact path="/Carrito">
-
+        <CartScreen/>
       </Route>
       
       <Route exact path="/CheckOut">
@@ -55,6 +58,7 @@ function App() {
       </Route>
       </Switch>
     </BrowserRouter>
+    </CarritoProvider>
   );
 }
 

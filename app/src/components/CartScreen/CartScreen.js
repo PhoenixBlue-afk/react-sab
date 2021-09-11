@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
+import {BsFillTrashFill} from 'react-icons/bs'
 
 export const CartScreen =()=>{
     const {carrito, eliminarCarrito, vaciarCarrito} = useContext(CarritoContext)
@@ -10,11 +11,14 @@ export const CartScreen =()=>{
         <>
         <h1>Resumen de su Compra</h1>
         {carrito.map(prod =>(
-            <div  key={prod.id}>
-                <h3>{prod.title}</h3>
-                <p>cantidad: {prod.cantidad}</p>
-                <p>cantidad: {prod.precio * prod.cantidad}</p>
-                <button onClick={() => eliminarCarrito(prod.id)}></button>
+            <div className="row my-col-5" key={prod.id}>
+                <div className="infoCarrito">
+                    <h3>{prod.title}</h3>
+                    <p>cantidad: {prod.count}</p>
+                    <p>Precio: {prod.price * prod.count}</p>
+                </div>
+                    <button><BsFillTrashFill onClick={() => eliminarCarrito(prod.id)}/><p>eliminar del carrito</p></button>
+                
             </div>
         ))}
         

@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useContext, useState}from 'react'
+import { CarritoContext } from '../../context/CarritoContext'
+import { Counter } from '../Counter/Counter'
 
 
-export const ItemDetail = ({id,title,category,description,price,pictureUrl})=>{
+export const ItemDetail = ({id,title,category,description,price,pictureUrl,cantidad})=>{
     
+    const {agregarCarrito, isInCart} = useContext(CarritoContext)
+    const [count, setCount] = useState (1)
+
+    const add = () =>{
+        agregarCarrito({
+           id, title, category, description, price, pictureUrl, count 
+        })
+    }
+    
+    
+
     return (
         
         <div>
@@ -20,13 +33,8 @@ export const ItemDetail = ({id,title,category,description,price,pictureUrl})=>{
                             {description}<br/>
                             Id: {id}<br/>
                         </p>
-                        <div id="contador">
-                            <button className="btn btn-outline-primary" id="menos">-</button>
-                            <p className="numero">0</p>
-                            <button className="btn btn-outline-primary"id="mas">+</button> 
-                        </div>
-                        
-                        <button className="btn btn-outline-primary" id="botonLargo">Agregar al carrito!!</button>
+                        <h6>Stock actual: {cantidad}</h6>
+                        <Counter cantidad = {cantidad} count= {count} setCount= {setCount} agregar= {add} agregado={isInCart(id)}/>
                     </div>
                 </div>
                 
