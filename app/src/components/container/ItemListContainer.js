@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 
-import { pedirDatos } from '../../helpers/pedirDatos';
+// import { pedirDatos } from '../../helpers/pedirDatos';
+import {  getFirestore } from '../firebase/config';
 
 
 import { ItemList } from './ItemList';
@@ -22,19 +23,44 @@ export const ItemListContainer =(props)=> {
 
     useEffect(()=> {
     setLoading(true)
-    pedirDatos()
-    .then(res =>{
+    // USANDO FIREBASE
+    const db = getFirestore()
+    const productos = db.collection('productos')
+
         if (catId) {
-            const arrayFiltrado =res.filter(prod => prod.category === catId)
-            setData (arrayFiltrado) 
+            const arrayFiltrado = productos.where('category','==', catId)
+            arrayFiltrado.get()
+            .then((response)=>{
+                const data = response.docs.map((doc)=>({...doc.data(),id: doc.id})) 
+                setData(data)
+                
+            }).finally (()=> {setLoading(false)})
         }else{
-            setData(res)
+            productos.get()
+            .then((response)=>{
+        
+                const data = response.docs.map((doc)=>({...doc.data(),id: doc.id})) 
+                setData(data)
+                
+            }).finally (()=> {setLoading(false)})
+
         }
-    }
-    )
-    .finally (()=> {setLoading(false)})
+        
     
 },[catId])
+
+    // PARA HACERLO CON EL STOCK EN LA APP
+    // pedirDatos()
+    // .then(res =>{
+        // if (catId) {
+        //     const arrayFiltrado = res.filter(prod => prod.category === catId)
+        //     setData (arrayFiltrado) 
+        // }else{
+        //     setData(res) 
+        // } 
+    // }
+    // )
+    
 
 
 
