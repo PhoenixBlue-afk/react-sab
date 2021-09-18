@@ -9,7 +9,7 @@ export const ShoppingCart =() =>{
 const {acumuladorCarrito, carrito} = useContext(CarritoContext)
     return(<div>
         {(carrito == 0) ? 
-            <p>sin carrito</p>
+            <p>Carrito vacio</p>
             :
             <Link to="/Carrito">
                 <div>

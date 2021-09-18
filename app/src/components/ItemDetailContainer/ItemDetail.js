@@ -18,7 +18,7 @@ export const ItemDetail = ({id,title,category,description,price,pictureUrl,canti
 
     return (
         
-        <div>
+        <div id="detalle">
             <h2 className="detalle-prod">Detalle del Producto</h2>
             <div className="container">
                 <h2 className="titulo-detalle-prod">{title} </h2>

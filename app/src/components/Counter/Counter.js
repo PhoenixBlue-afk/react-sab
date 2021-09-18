@@ -30,31 +30,23 @@ export const Counter = ({cantidad, count, setCount, agregar, agregado}) =>{
 
 
     return(
-        <>
-
-        {
+        <><div id="contador">
+                    <button className="btn btn-outline-primary" id="menos" onClick={handleRestar}>-</button>
+                    <p className="numero">{count}</p>
+                    <button className="btn btn-outline-primary"id="mas" onClick={handleSumar}>+</button> 
+                </div>
+                <div>
+                
+                 {
             agregado 
-            ? 
-            <>
-                <div id="contador">
-                    <button className="btn btn-outline-primary" id="menos" onClick={handleRestar}>-</button>
-                    <p className="numero">{count}</p>
-                    <button className="btn btn-outline-primary"id="mas" onClick={handleSumar}>+</button> 
-                </div>
-                <button className="btn btn-outline-primary" onClick={agregar} id="botonLargo">Agregar al carrito!!</button>
-                <Link to="/Carrito" className="btn btn-outline-success" >Terminar Compra!!</Link>
-            </>
-            :
-            <>
-                <div id="contador">
-                    <button className="btn btn-outline-primary" id="menos" onClick={handleRestar}>-</button>
-                    <p className="numero">{count}</p>
-                    <button className="btn btn-outline-primary"id="mas" onClick={handleSumar}>+</button> 
+            ? <Link to="/Carrito" id="botonLargo" className="btn btn-outline-success" >Terminar Compra!!</Link>
+            
+            :<button className="btn btn-outline-primary" onClick={agregar} id="botonLargo">Agregar al carrito!!</button>
+            }
+                
                 </div>
 
-                <button className="btn btn-outline-primary" onClick={agregar} id="botonLargo">Agregar al carrito!!</button>
-            </>
-        }
+       
             
             
             

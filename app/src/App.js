@@ -8,6 +8,7 @@ import { Nosotros } from './components/Nosotros/Nosotros';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { CarritoProvider } from './context/CarritoContext';
 import { CartScreen } from './components/CartScreen/CartScreen';
+import {Footer} from './components/Footer/Footer'
 
 
 
@@ -57,6 +58,9 @@ function App() {
         <Redirect to="/" />
       </Route>
       </Switch>
+      <footer>
+        <Footer/>
+      </footer>
     </BrowserRouter>
     </CarritoProvider>
   );

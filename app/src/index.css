@@ -97,6 +97,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-top: -9px;
 }
 
 .numero{
@@ -126,4 +127,45 @@ header {
 
 .infoCarrito{
   text-align: center;
+  height: 110px;
+}
+
+#detalle{
+  margin-top: -45px;
+}
+#botonJusto{
+  margin-top: 1rem;
+}
+#arreglado{
+   margin: 1rem; 
+}
+
+#botonesFinales{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  text-align: center;
+}
+#eliminarDelCarrito{
+  width: 25%;
+  text-align: center;
+}
+#tacho{
+  text-align: center;
+}
+#ajuste{
+  width: 90%;
+  font-size: small
+}
+#final{
+  margin-left: 5rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+#derechos{
+  text-align: center;
+}
+#casi:hover{
+  color: white;
 }
