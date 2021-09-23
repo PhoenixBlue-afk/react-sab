@@ -6,13 +6,13 @@ import { Mapa } from './Mapa'
 export  const Footer = () => {
     return(
 
-        <>
+        <footer id="footer">
         <div id="final">
         <Mapa/>
         </div>
-        <footer id="derechos">
+        <div id="derechos">
             <span>Todos los derechos reservados ahre XD</span>
+        </div>
         </footer>
-        </>
     )
 }

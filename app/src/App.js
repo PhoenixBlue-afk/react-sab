@@ -9,6 +9,7 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { CarritoProvider } from './context/CarritoContext';
 import { CartScreen } from './components/CartScreen/CartScreen';
 import {Footer} from './components/Footer/Footer'
+import { Checkout } from './components/Checkout/Checkout';
 
 
 
@@ -26,7 +27,7 @@ function App() {
     <Switch>
       <Route exact path ="/">
         
-        <h1 className="subTitulo">Sea Bienvenidoa a <br/>Mundo Lapiz</h1>
+        <h1 className="subTitulo">Sea Bienvenido a <br/>Mundo Lapiz</h1>
         
       </Route>
       <Route exact path= "/Nosotros">
@@ -38,6 +39,7 @@ function App() {
       </Route>
 
       <Route exact path= "/Productos/category/:catId">
+        
         <ItemListContainer greeting = "Somos la libreria mas grande del pais"/>
       </Route>
 
@@ -50,7 +52,7 @@ function App() {
       </Route>
       
       <Route exact path="/CheckOut">
-
+      <Checkout/>
 
       </Route>
 
@@ -58,9 +60,9 @@ function App() {
         <Redirect to="/" />
       </Route>
       </Switch>
-      <footer>
+      
         <Footer/>
-      </footer>
+      
     </BrowserRouter>
     </CarritoProvider>
   );

@@ -65,18 +65,20 @@ export const ItemListContainer =(props)=> {
 
 
     
-    return <main className = "itemsList">
+    return <main  className = "itemsList">
 
     <h1>Bienvenid@, le esperabamos</h1>
     <p>{`${props.greeting} Todos nuestros articulos cuentan con amplio stock`}</p>
     <hr/>
     
     <Navegacion/>
+    
         {
             loading ? <h2>Cargando, por favor espere...</h2>
             : <ItemList productos={data}/>
              
         }
+
     
     </main>
 }

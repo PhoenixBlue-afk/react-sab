@@ -8,6 +8,7 @@ export const ShoppingCart =() =>{
 
 const {acumuladorCarrito, carrito} = useContext(CarritoContext)
     return(<div>
+        {/* eslint-disable-next-line */}
         {(carrito == 0) ? 
             <p>Carrito vacio</p>
             :

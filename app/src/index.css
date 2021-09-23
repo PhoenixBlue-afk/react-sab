@@ -155,17 +155,38 @@ header {
 }
 #ajuste{
   width: 90%;
-  font-size: small
+  font-size: small;
+  padding-bottom: 5rem;
 }
 #final{
   margin-left: 5rem;
-  margin-top: 2rem;
   display: flex;
   flex-direction: row;
+  background-color: beige;
 }
 #derechos{
   text-align: center;
+  margin-left: 39.5rem;
+  width: max-content;
+  background-color: beige;
 }
 #casi:hover{
   color: white;
+}
+#footer{
+  position: fixed;
+  bottom: 0px;
+  background-color: beige;
+  width: 100%;
+}
+#correccion{
+  padding-bottom: 2rem;
+}
+
+#foto{
+  height: 500px;
+}
+#card{
+  margin-bottom: 0.5rem;
+  padding-bottom: 15px;
 }
